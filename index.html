@@ -19,6 +19,16 @@
 <script src="script.js" defer></script>
 </head>
 
+<noscript>
+  <style>
+    main {display: none;}
+  </style>
+  <div class="enablejs">
+  <p>For full functionality of this site it is necessary to enable JavaScript.
+ Here are the <a href="https://www.enable-javascript.com/">
+ instructions how to enable JavaScript in your web browser</a>.</p>
+  </div>
+</noscript>
 <body>
 
   <div class="scroll-head">
@@ -47,6 +57,7 @@
     </div>
   </nav>
 
+<p class="version"><a href="https://github.com/phoenix-pix/Personal-Portfolio/blob/main/README.md">v.0.5</a></p>
 
 <main>
   <section class="intro">
@@ -55,15 +66,15 @@
     </h1>
     <h2 class="typewriter2 anim-typewriter2">I am a web <span class="code-colour2">developer</span> based out of (Scotland).
     </h2>
-    <div class="pic"><img src="images/testpic.jpg" alt="Lovell Santimano picture"></div>
+    <div class="pic"><img src="images/profile.jpg" alt="Lovell Santimano picture"></div>
     <p>Load <span class="code-colour2">Profile<span class="blinking">?</span></span><a href="about.html"><span class="code-colour">Y/N</span></a></p>
     <p>Load <span class="code-colour2">Projects<span class="blinking">?</span></span><a href="projects.html"><span class="code-colour">Y/N</span></a></p>
     <p>Load <span class="code-colour2">Contact Form<span class="blinking">?</span></span><a href="#contact"><span class="code-colour">Y/N</span></a></p>
     <p>After a prolonged period of trial and error in my life where I was, like many of my peers, attempting to find my <span class="code-colour2">passion</span> in life.  I began my coding journey in the middle of (2020) and quickly discovered that this was it.</p> <p>With the ongoing help of a wonderfully supportive online dev community and countless resources I honed my skills from scratch and now find myself on the ever-cyclical road of self-improvement and <span class="code-colour2">life-long learning…</span></p>
       <h3>Likes:</h3>
-      <p>A good cuppa, reddit, crumpets.</p>
+      <p>Yorkshire Tea, reddit, crumpets, cats.</p>
       <h3>Dislikes:</h3>
-      <p>Coffee, imgur, okra.</p>
+      <p>Coffee, twitter, overzealous background music.</p>
     <h2>Can be found (here):</h2>
     <div class="socials">
     <a href="https://github.com/phoenix-pix" target="_blank" rel="noopener"><img src="images/github.svg" alt="Github"></a>
@@ -92,6 +103,12 @@
 </div>
 </section>
 
+<section class="testimonials">
+  <div class="inner-content fade-in">
+    <h2>Testimonials:</h2>
+      <p class="t-block"><span class="t-wrapper">"</span>My experience in working together with Lovell on the development of the YOU CAN COOK website has been nothing but a pleasure. He has been organised, consistent and timely with deadlines and I have been impressed by his communication and delivery throughout.  I would not hesitate in recommending him as a web designer or coder as he has the rarer ability to manage both sides of any web development project - often the work of a whole team.<span class="t-wrapper">"</span></p><p class="client"><span class="code-colour2">Emily Macinnes, Director | YOU CAN COOK</span></p>
+</div>
+</section>
 
 <section>
   <div class="inner-content fade-in">
@@ -99,7 +116,25 @@
 <h2 id="contact">For any business enquiries, feel free to get in touch below:</h2>
 
 <div class="contact-wrap">
-<p>hello@lovellsantimano.co.uk</p>
+
+<button class="contact-redirect">Send me a message!</button>
+
+  <div class="modal-bg">
+    <div class="modal">
+      <h3>Please fill in your details below:</h3>
+      <p>I will get back to you within 24 hours!</p>
+      <form name="contactForm" action="index.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" name="name">
+      <label for="email">Email:</label>
+      <input type="email" name="mail" required minlength="5" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" title="Please ensure you've entered your details in correctly and try again. Please note that we only accept emails from TLDs, e.g. '.com or .uk'">
+      <label for="message">Your Message:</label>
+      <textarea name="message" aria-label="Message" maxlength="500"></textarea>
+      <button type="submit" aria-label="Submit" name="submit" class="contact-redirect">Send!</button>
+      </form>
+      <span class="modal-close">X</span>
+  </div>
+</div>
 </div>
 </div>
 </section>

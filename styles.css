@@ -123,6 +123,47 @@ p {
 	font-size: 18px;
 }
 
+/* Noscript Settings */
+.enablejs {
+	text-align: center;
+	padding: 10px;
+}
+
+.enablejs p {
+	font-weight: normal;
+	font-family: Montserrat, sans-serif;
+	color: #fff;
+	font-size: 12px;
+}
+
+.enablejs a:hover {
+	text-decoration: underline;
+}
+
+@media all and (min-width: 320px) {
+.enablejs {
+	width: 80%;
+}
+}
+
+@media all and (min-width: 768px) {
+	.enablejs {
+		width: 90%;
+	}
+}
+
+@media all and (min-width: 1280px) {
+	.enablejs {
+		width: 80%;
+	}
+}
+
+@media all and (min-width: 1600px) {
+	.enablejs {
+		width: 100%;
+	}
+}
+
 /* Mobile Menu */
 .menu-wrap {
 	position: fixed;
@@ -340,8 +381,8 @@ background: #FBFEF9;
 		width: 15%;
 	}
 	.pic img {
-		height: 50%;
-		width: 50%;
+		height: 45%;
+		width: 45%;
 	}
 }
 
@@ -355,8 +396,8 @@ background: #FBFEF9;
 		width: 15%;
 	}
 	.pic img {
-		height: 40%;
-		width: 40%;
+		height: 35%;
+		width: 35%;
 	}
 }
 
@@ -366,18 +407,19 @@ background: #FBFEF9;
 		width: 10%;
 	}
 	.pic img {
-		height: 50%;
-		width: 50%;
+		height: 40%;
+		width: 40%;
 	}
 }
 
 .pic img {
-	border-radius: 50%;
-	border: solid 2px #ced4da;
+	border-radius: 0%;
+	border: solid 1px #ced4da;
 	transition: 0.3s ease-in-out;
-	filter: grayscale(90%);
+	filter: grayscale(100%);
+	margin: 0;
+	box-shadow: 10px 10px white;
 }
-
 
 .inner-content {
 	font-family: 'Share Tech Mono', monospace;
@@ -462,6 +504,20 @@ background: #FBFEF9;
   100% {
     opacity:1;
   }
+}
+
+/* Version Number */
+.version {
+	color: #fff;
+	font-family: Montserrat, sans-serif;
+	font-size: 17px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.version:hover {
+	text-decoration: underline;
 }
 
 /* Socials Section */
@@ -671,6 +727,17 @@ background: #FBFEF9;
 .client {
 	font-size: 20px;
 	border-bottom: solid 1px #fff;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.t-block {
+	text-align: justify;
+}
+
+.t-wrapper {
+	font-size: 30px;
+	margin: 0px;
 }
 
 /* Media queries for testimonials section */
@@ -688,7 +755,7 @@ background: #FBFEF9;
 		width: 70vw;
 	}
 	.client {
-		width: 355px;
+		width: 350px;
 	}
 }
 
@@ -697,7 +764,7 @@ background: #FBFEF9;
 		width: 60vw;
 	}
 	.client {
-		width: 360px;
+		width: 480px;
 	}
 }
 
@@ -705,15 +772,12 @@ background: #FBFEF9;
 	.testimonials {
 		width: 50vw;
 	}
-	.client {
-		width: 390px;
-	}
 }
 /* Contact Section */
 .contact-wrap {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start; /* Change back to center */
+	align-items: center; /* Change back to center */
 	height: 20vh;
 	margin: 0; /* Remove this */
 }
@@ -944,7 +1008,7 @@ form {
 }
 
 .modal-close:hover {
-	text-decoration: overline;
+	color: #fff;
 }
 
 input {
@@ -1056,17 +1120,17 @@ form {
 /* Typewriter Classes */
 .typewriter {
 	position: relative;
-	width: 435px;
 	border-right: 2px solid rgba(255,255,255,.75);
+	width: 435px;
 	white-space: nowrap;
 	overflow: hidden;
 }
 
 .typewriter2 {
 	position: relative;
-	width: 650px;
 	border-right: 2px solid rgba(255,255,255,.75);
 	white-space: nowrap;
+	width: 650px;
 	overflow: hidden;
 }
 
@@ -1127,11 +1191,13 @@ form {
 
 .header {
 	color: #5C99A2;
-	font-size: 19px;
+	font-size: 20px;
 }
 
-.header.b {
-	font-weight: bolder;
+.b {
+	font-weight: bold;
+	padding: 10px;
+	border: solid white 2px;
 }
 
 .project-name {
@@ -1161,8 +1227,6 @@ form {
 }
 
 .logo img {
-	border: solid 2px #ced4da;
-	padding: 2px;
 	margin: 0;
 }
 
