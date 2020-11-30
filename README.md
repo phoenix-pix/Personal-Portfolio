@@ -51,3 +51,16 @@ v.0.5
 -added box shadow on hover for social icons
 -updated profile picture
 -added box shadow effect to profile picture
+
+v.0.6
+-Fixed ::before/after pseudo element mark-up
+-Added additional styling for headings (greater-than and lesser-than symbols)
+-Added ::before pseudo element styling to list items on projects page
+-Replaced literal mark-up for testimonial quotations with pseudo elements
+-Implemented first pass for php mailer function
+-Implemented first pass for Google reCAPTCHA
+-Shortened start-up timings for modal transitions
+
+v.0.7
+-Added WIP class type
+-

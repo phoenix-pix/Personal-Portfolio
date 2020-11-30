@@ -31,8 +31,8 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote::before, blockquote::after,
+q::before, q::after {
 	content: '';
 	content: none;
 }
@@ -97,8 +97,6 @@ body {
 
 /* Font imports */
  @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@900&family=Montserrat:wght@200&family=Share+Tech+Mono&display=swap');
-
- @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani&display=swap');
 
 nav {
  font-family: 'Fira Sans', sans-serif;
@@ -211,8 +209,8 @@ p {
 }
 
 /* Top and bottom lines */
-.menu-wrap .hamburger > div:before,
-.menu-wrap .hamburger > div:after {
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
 	content: "";
 	position: absolute;
 	z-index: 2;
@@ -223,7 +221,7 @@ p {
 }
 
 /* Moves line down */
-.menu-wrap .hamburger > div:after {
+.menu-wrap .hamburger > div::after {
 	top: 10px;
 }
 
@@ -233,8 +231,8 @@ p {
 }
 
 /* Turn lines into X */
-.menu-wrap .toggler:checked + .hamburger > div:before,
-.menu-wrap .toggler:checked + .hamburger > div:after {
+.menu-wrap .toggler:checked + .hamburger > div::before,
+.menu-wrap .toggler:checked + .hamburger > div::after {
 	top: 0;
 	transform: rotate(90deg);
 }
@@ -447,23 +445,6 @@ background: #FBFEF9;
 
 .code-colour2 {
 	color: #7cd6e1;
-	margin: 0;
-}
-
-.code-colour3 {
-	color: #F00699;
-	margin: 0;
-	font-family: Rajdhani, sans-serif;
-}
-
-.code-colour4 {
-	color: #018E42;
-	margin: 0;
-	font-family: Montserrat, sans-serif;
-}
-
-.code-colour5 {
-	color: #F7D002;
 	margin: 0;
 }
 
@@ -731,15 +712,32 @@ background: #FBFEF9;
 	text-align: center;
 }
 
+.client::before {
+	content: '';
+	background: #fff;
+	width: 10px;
+	height: 10px;
+	display: block;
+}
+
 .t-block {
 	text-align: justify;
+	background: #343a40;
+	padding: 20px;
+	border-radius: 0%;
 }
 
-.t-wrapper {
-	font-size: 30px;
-	margin: 0px;
+.t-block::before {
+	content: open-quote;
+	font-size: 25px;
+	margin-right: 3px;
 }
 
+.t-block::after {
+	content: close-quote;
+	font-size: 25px;
+	margin-left: 3px;
+}
 /* Media queries for testimonials section */
 @media all and (min-width: 320px) {
 	.testimonials {
@@ -982,7 +980,7 @@ form {
 	z-index: 4;
 	visibility: hidden;
 	opacity: 0;
-	transition: visibility 0s, opacity 0.5s;
+	transition: visibility 0.2s, opacity 0.5s;
 }
 
 .bg-active {
@@ -1002,26 +1000,29 @@ form {
 	right: -5px;
 	color: #327737;
 	cursor: pointer;
-	font-size: 22px;
+	font-size: 23px;
 	font-weight: bolder;
-	transition: 0.4s;
+	transition: 0.4s ease-in-out;
 }
 
 .modal-close:hover {
 	color: #fff;
+	transform: rotate(180deg);
 }
 
 input {
 	padding: 15px;
 	border: solid 2px #fff;
 	border-radius: 2em;
+	font-family: Montserrat, sans-serif;
 }
 
 textarea {
-	padding: 30px;
+	padding: 30px 15px;
 	border-radius: 2em;
 	resize: none;
 	overflow-y: auto;
+  font-family: Montserrat, sans-serif;
 }
 
 form {
@@ -1031,6 +1032,37 @@ form {
 	justify-content: center;
 }
 
+/* Confirmation message after submitting form */
+.confirm p {
+	border: solid 2px #fff;
+	padding: 15px;
+	font-size: 24px;
+	font-family: Montserrat, sans-serif;
+}
+
+/* Google Captcha Status */
+.status {
+	font-size: 16px;
+	color: green;
+}
+
+.status span {
+  color: red;
+}
+
+/* WIP Indicator */
+.wip::before {
+	content: "WORK-IN-PROGRESS--";
+	color: orange;
+	font-size: 20px;
+	text-decoration: underline;
+}
+.wip::after {
+	content: "WORK-IN-PROGRESS--";
+	color: orange;
+	font-size: 20px;
+	text-decoration: underline;
+}
 /* Skill Bars */
 .skills-container {
 	width: 100%;
@@ -1135,17 +1167,6 @@ form {
 }
 
 /*Glowing Animation */
-/* Menu Glow */
-@keyframes glowing-m {
-  0% { box-shadow: 0 0 -15px #FBFEF9; }
-  40% { box-shadow: 0 0 15px #FBFEF9; }
-  60% { box-shadow: 0 0 15px #FBFEF9; }
-  100% { box-shadow: 0 0 -15px #FBFEF9; }
-}
-
-.glow-m {
-  animation: glowing-m 4000ms infinite ease-in-out;
-}
 
 /* Gold Rank */
 @keyframes glowing-g {
@@ -1216,14 +1237,16 @@ form {
 
 .projects li {
 	list-style: initial;
+	padding: 5px;
 }
 
 .projects li:nth-child(odd) {
-	color: #9CA3DB;
+	color: #97EAD2;
+	background: #343a40;
 }
 
 .projects p:nth-child(odd) {
-	color: #9CA3DB;
+	color: #7FEFBD;
 }
 
 .logo img {
