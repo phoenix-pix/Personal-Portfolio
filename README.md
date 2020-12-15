@@ -63,4 +63,19 @@ v.0.6
 
 v.0.7
 -Added WIP class type
+-Implemented second pass for reCAPTCHA
+-Added Udraw svg assets to about page 
+-Redrafted written content of the 'about me' section 
+-Added affiliate.html boilerplate 
+-Added affiliate link and icon to menu
+-Added text containers for about page 
+
+v.0.8 
+-Fixed animation issue on smaller viewports 
+-Improved security for targeted links 
+-Redesigned text backgrounds on about page 
+-Reduced intensity of colours on about page 
+-Checked off all head tasks
+-Checked off all image tasks  
+-Checked off all webfont tasks 
 -

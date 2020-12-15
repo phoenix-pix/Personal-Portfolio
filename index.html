@@ -4,7 +4,7 @@
 <head>
 <title>Lovell Santimano | Web Development Portfolio</title>
 <meta charset="utf-8">
-<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+<meta name="viewport" content= "width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="author" content="Lovell Santimano">
 <meta name= "description" content= "Lovell Santimano is a web developer based in Scotland. I specialise in providing friendly and professional services and creating clean, modern designs.">
 <!-- Add favicons here -->
@@ -16,6 +16,9 @@
 <meta name="msapplication-TileColor" content="#9f00a7">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" type="text/css" href="styles.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <script src="script.js" defer></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -31,19 +34,6 @@
   </div>
 </noscript>
 
-<!-- PHP Here -->
-<?php
-$name = $_POST['name'];
-$mail = $_POST['mail'];
-$message = $_POST['message'];
-$formcontent=" From: $name";
-$recipient = "hello@lovellsantimano.com";
-$mailheader = "From: $mail \n\n Message: \n\n $message";
-mail($recipient, $formcontent, $mailheader) or die("Error!");
-
-?>
-
-
 
 <body>
 
@@ -52,8 +42,6 @@ mail($recipient, $formcontent, $mailheader) or die("Error!");
       <div class="progress-bar" id="scrollBar"></div>
     </div>
   </div>
-
-<a href="https://siteground.co.uk/go/2wi5wonz28" target="_blank"><img border="0" src="https://uapi.siteground.com/img/affiliate/en/GBP/general_EN_GBP_start-site-leaderboard-green.jpg" alt="Siteground Banner"></a>
 
   <nav>
     <div class="menu-wrap">
@@ -73,14 +61,14 @@ mail($recipient, $formcontent, $mailheader) or die("Error!");
     </div>
   </nav>
 
-<p class="version"><a href="https://github.com/phoenix-pix/Personal-Portfolio/blob/main/README.md">v.0.7</a></p>
+<p class="version"><a href="https://github.com/phoenix-pix/Personal-Portfolio/blob/main/README.md">v.0.8</a></p>
 
 <main>
   <section class="intro">
     <div class="inner-content fade-in">
-    <h1 class="typewriter anim-typewriter">Hi there, my (name) is <span class="code-colour2">Lovell.</span>
+    <h1 id="t1">Hi there, my (name) is <span class="code-colour2">Lovell.</span>
     </h1>
-    <h2 class="typewriter2 anim-typewriter2">I am a web <span class="code-colour2">developer</span> based out of (Scotland).
+    <h2 id="t2">I am a web <span class="code-colour2">developer</span> based out of (Scotland).
     </h2>
     <div class="pic"><img src="images/profile.jpg" alt="Lovell Santimano picture"></div>
     <p>Load <span class="code-colour2">Profile<span class="blinking">?</span></span><a href="about.html"><span class="code-colour">Y/N</span></a></p>
@@ -88,14 +76,22 @@ mail($recipient, $formcontent, $mailheader) or die("Error!");
     <p>Load <span class="code-colour2">Contact Form<span class="blinking">?</span></span><a href="#contact"><span class="code-colour">Y/N</span></a></p>
     <p>After a prolonged period of trial and error in my life where I was, like many of my peers, attempting to find my <span class="code-colour2">passion</span> in life.  I began my coding journey in the middle of (2020) and quickly discovered that this was it.</p> <p>With the ongoing help of a wonderfully supportive online dev community and countless resources I honed my skills from scratch and now find myself on the ever-cyclical road of self-improvement and <span class="code-colour2">life-long learning…</span></p>
       <h3>&lt; Likes &gt;</h3>
-      <p>Yorkshire Tea, reddit, crumpets, cats.</p>
+      <ul class="like-dislike-list">
+        <li>Yorkshire Tea</li>
+        <li>reddit</li>
+        <li>Cats</li>
+      </ul>
       <h3>&lt; Dislikes &gt;</h3>
-      <p>Coffee, twitter, overzealous background music.</p>
+      <ul class="like-dislike-list">
+        <li>Coffee</li>
+        <li>Twitter</li>
+        <li>Overzealous background music</li>
+      </ul>
     <h2>Can be found (here):</h2>
     <div class="socials">
-    <a href="https://github.com/phoenix-pix" target="_blank" rel="noopener"><img src="images/github.svg" alt="Github"></a>
-    <a href="https://www.linkedin.com/in/lovell-santimano-b3aba81b9/" target="_blank" rel="noopener"><img src="images/linkedin.svg" alt="LinkedIn"></a>
-    <a href="https://twitter.com/SantimanoLovell" target="_blank" rel="noopener"><img src="images/twitter.svg" alt="Twitter"></a>
+    <a href="https://github.com/phoenix-pix" target="_blank" rel="noreferrer noopener"><img src="images/github.svg" alt="Github"></a>
+    <a href="https://www.linkedin.com/in/lovell-santimano-b3aba81b9/" target="_blank" rel="noreferrer noopener"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+    <a href="https://twitter.com/SantimanoLovell" target="_blank" rel="noreferrer noopener"><img src="images/twitter.svg" alt="Twitter"></a>
   </div>
 </div>
   </section>
@@ -105,7 +101,7 @@ mail($recipient, $formcontent, $mailheader) or die("Error!");
   <h2>&lt; Completed Projects &gt;</h2>
   <div class="project-grid">
     <div class="project-wrapper">
-    <a href="http://www.youcancook.org.uk/"><img src="images/ycc-carousel1.png" alt="You Can Cook redesign"></a>
+    <a href="https://www.youcancook.org.uk/" target="_blank" rel="noreferrer noopener"><img src="images/ycc-carousel1.png" alt="You Can Cook redesign"></a>
     <div class="overlay">
       <div class="overlay-title">YOU CAN COOK</div>
       <div class="overlay-text">
@@ -117,6 +113,7 @@ mail($recipient, $formcontent, $mailheader) or die("Error!");
     </div>
   </div>
 </div>
+</div>
 </section>
 
 <section class="testimonials">
@@ -127,10 +124,11 @@ mail($recipient, $formcontent, $mailheader) or die("Error!");
 </div>
 </section>
 
-<section>
+<section class="testimonials">
   <div class="inner-content fade-in">
 
-<h2 id="contact">For any business enquiries, feel free to get in touch below:</h2>
+<h2 id="contact">&lt; Business Enquiries &gt;</h2>
+<p class="tagline">Whether you're an individual or a small business looking to build up your online presence, I can help!</p>
 
 <div class="contact-wrap">
 
@@ -139,15 +137,43 @@ mail($recipient, $formcontent, $mailheader) or die("Error!");
   <div class="modal-bg">
     <div class="modal">
       <h3>Please fill in your details below:</h3>
-      <p>I will get back to you within 24 hours!</p>
+      <p style="font-size: 16px;">I will get back to you within 24 hours!</p>
       <form name="contactForm" action="index.php" method="post">
       <input type="text" name="name" required placeholder="John Doe">
       <input type="text" name="mail" required placeholder="johndoe@email.com" minlength="5" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" title="Please ensure you've entered your details in correctly and try again. Please note that we only accept emails from TLDs, e.g. '.com or .uk'">
-      <textarea name="message" aria-label="Message" maxlength="500" required placeholder="Your message here"></textarea>
+      <textarea name="message" aria-label="Message" maxlength="500" required placeholder="Give me a brief overview of what you're aiming to achieve"></textarea>
 
       <div class="g-recaptcha" data-sitekey="6Lf0seoZAAAAADf8i2r6ajDrda0f_boQKryfe9Co"></div>
       <div class="status">
+        <?php
+if(isset($_POST['submit']))
+{
+$name = $_POST['name'];
+$mail = $_POST['mail'];
+$message = $_POST['message'];
+$formcontent=" From: $name";
+$recipient = "hello@lovellsantimano.com";
+$mailheader = "From: $mail \n\n Message: \n\n $message";
 
+$secretKey = "6Lf0seoZAAAAAO7L-0qIn8ZGc7lGnZddh66Dq3bx";
+$responseKey = $_POST['g-recaptcha-response'];
+$UserIP = $_SERVER['REMOTE_ADDR'];
+$url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$UserIP";
+
+$response = file_get_contents($url);
+$response = json_decode($response);
+
+if ($response->success)
+  {
+    mail($recipient, $formcontent, $mailheader);
+    echo "Message sent successfully!";
+  }
+  else
+  {
+    echo "<span>Please verify that you're not a robot.</span>";
+  }
+}
+?>
       </div>
       <button type="submit" aria-label="Submit" name="submit" value="submit" class="contact-redirect">Send!</button>
       </form>

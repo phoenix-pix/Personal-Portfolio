@@ -107,3 +107,6 @@ Contact Form
 
 &lt; = <
 &gt; = > 
+
+class="typewriter anim-typewriter"
+class="typewriter2 anim-typewriter2"

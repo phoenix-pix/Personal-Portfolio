@@ -20,3 +20,11 @@ modalBtn.addEventListener('click', function(){
 modalClose.addEventListener('click',function(){
   modalBg.classList.remove('bg-active')
 });
+
+// Remove/add typewriter effect on window width change //
+if($(window).width() > 690) {
+        $('#t1').addClass('typewriter anim-typewriter');
+        $('#t2').addClass('typewriter2 anim-typewriter2');
+    }else{
+        $('#t2').removeClass('typewriter anim-typewriter typewriter2 anim-typewriter2');
+    }

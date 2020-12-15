@@ -67,7 +67,7 @@ img {
 body {
     height: 100vh;
     background-color: #1E1E24;
-		line-height: 1.5;
+	line-height: 1.5;
   }
 
 /* Media Queries for margins */
@@ -115,6 +115,10 @@ a {
   color: inherit;
 	transition: 0.3s ease;
 	text-transform: lowercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Share Tech Mono, monospace;
 }
 
 p {
@@ -353,6 +357,7 @@ background: #FBFEF9;
 /* Intro Section */
 .intro {
 	height: 100%;
+	font-family: Share Tech Mono, monospace;
 }
 
 /* Media Queries for intro */
@@ -491,10 +496,10 @@ background: #FBFEF9;
 .version {
 	color: #fff;
 	font-family: Montserrat, sans-serif;
-	font-size: 17px;
+	font-size: 16px;
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 5px;
 }
 
 .version:hover {
@@ -516,6 +521,11 @@ background: #FBFEF9;
 
 .socials a:hover {
 	box-shadow: 5px 5px #fff;
+}
+
+/* Likes/Dislikes */
+.like-dislike-list {
+	list-style: disc;
 }
 
 /* Projects */
@@ -710,6 +720,7 @@ background: #FBFEF9;
 	border-bottom: solid 1px #fff;
 	margin-bottom: 40px;
 	text-align: center;
+	font-family: Montserrat, sans-serif;
 }
 
 .client::before {
@@ -725,6 +736,7 @@ background: #FBFEF9;
 	background: #343a40;
 	padding: 20px;
 	border-radius: 0%;
+	font-family: Montserrat, sans-serif;
 }
 
 .t-block::before {
@@ -772,12 +784,16 @@ background: #FBFEF9;
 	}
 }
 /* Contact Section */
+.tagline {
+	font-family: Montserrat, sans-serif;
+	font-size: 20px;
+}
+
 .contact-wrap {
 	display: flex;
 	flex-direction: column;
 	align-items: center; /* Change back to center */
 	height: 20vh;
-	margin: 0; /* Remove this */
 }
 
 button {
@@ -891,9 +907,14 @@ button {
 	margin: 0px 0px;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 .modal {
 	align-items: center;
+}
+.modal-close {
+	top: -30px;
+	right: 50px;
 }
 input {
 	width: 90%;
@@ -902,7 +923,7 @@ textarea {
 	width: 90%;
 }
 form {
-	width: 100%;
+	width: 90%;
 }
 }
 
@@ -915,6 +936,10 @@ form {
 	.modal {
 		align-items: center;
 		height: 60%;
+	}
+	.modal-close {
+		top: 0px;
+		right: -20px;
 	}
 	input {
 		width: 90%;
@@ -937,6 +962,9 @@ form {
 		align-items: center;
 		height: 50%;
 	}
+	.modal-close {
+		right: 70px;
+	}
 	input {
 		width: 80%;
 	}
@@ -957,6 +985,9 @@ form {
 	.modal {
 		align-items: center;
 		height: 70%;
+	}
+	.modal-close {
+		right: -5px;
 	}
 	input {
 		width: 95%;
@@ -996,11 +1027,9 @@ form {
 
 .modal-close {
 	position: absolute;
-	top: 0px;
-	right: -5px;
 	color: #327737;
 	cursor: pointer;
-	font-size: 23px;
+	font-size: 20px;
 	font-weight: bolder;
 	transition: 0.4s ease-in-out;
 }
@@ -1052,17 +1081,51 @@ form {
 
 /* WIP Indicator */
 .wip::before {
-	content: "WORK-IN-PROGRESS--";
+	content: "--WORK-IN-PROGRESS--";
 	color: orange;
 	font-size: 20px;
 	text-decoration: underline;
 }
 .wip::after {
-	content: "WORK-IN-PROGRESS--";
+	content: "--WORK-IN-PROGRESS--";
 	color: orange;
 	font-size: 20px;
 	text-decoration: underline;
 }
+
+/*	Introductory Blurb stuff for about page */
+.statement {
+	font-size: 20px;
+	color: #7cd6e1;
+}
+
+a[data-tool-tip] {
+	position: relative;
+	margin: 0;
+}
+
+a[data-tool-tip]::after {
+	content: attr(data-tool-tip);
+}
+
+/* Speech bubbles */
+.box {
+	width: 100%;
+	margin: 20px;
+	padding: 25px;
+	text-align: left;
+	font-weight: 600;
+	opacity: 0.9;
+	color: rgba(255, 255, 255, 0.904);
+	font-family: Montserrat, sans-serif;
+	font-size: 15px;
+	box-shadow: 0 0 1rem 0 #6d0052; 
+	border-radius: 5px;
+	background-color:#6d0052;
+	backdrop-filter: blur(100px);
+}
+
+
 /* Skill Bars */
 .skills-container {
 	width: 100%;
@@ -1084,7 +1147,7 @@ form {
 }
 
 .css {
-	width: 75%;
+	width: 80%;
 	background-color: #2196F3;
 }
 
@@ -1094,7 +1157,7 @@ form {
 }
 
 .php {
-	width: 50%;
+	width: 55%;
 	background-color: #808080;
 }
 
@@ -1124,7 +1187,7 @@ form {
 }
 /* Typewriter Effect */
 .anim-typewriter{
-  animation: typewriter 4s steps(40) 1s 1 normal both,
+  animation: typewriter 3.5s steps(40) 1s 1 normal both,
              blinkTextCursor 500ms steps(40) infinite normal;
 }
 @keyframes typewriter{
@@ -1137,7 +1200,7 @@ form {
 }
 
 .anim-typewriter2{
-  animation: typewriter2 4s steps(40) 4.2s 1 normal both,
+  animation: typewriter2 3.5s steps(40) 3s 1 normal both,
              blinkTextCursor 500ms steps(40) infinite normal;
 }
 @keyframes typewriter2{
@@ -1206,8 +1269,8 @@ form {
 
 /* Project timestamps */
 .time-stamp {
+	font-family: sans-serif;
 	text-decoration: underline;
-	color: #388E3C;
 }
 
 .header {
@@ -1215,24 +1278,26 @@ form {
 	font-size: 20px;
 }
 
-.b {
-	font-weight: bold;
-	padding: 10px;
-	border: solid white 2px;
+.header::before {
+	counter-increment: project-counter;
+	content: counter(project-counter) '| ';
+	color: white;
 }
 
 .project-name {
 	text-transform: uppercase;
 	font-size: 22px;
+	font-family: Montserrat, sans-serif;
 }
+
+.projects.a {
+	counter-reset: project-counter;
+}
+
 
 .projects.a a {
 	margin: 0;
 	word-wrap: break-word;
-}
-
-.projects a:hover {
-	text-decoration: underline;
 }
 
 .projects li {
@@ -1279,4 +1344,15 @@ form {
 	height: 25%;
 	width: 25%;
 	}
+}
+
+/*	Affiliate menu link styling */
+.affiliate-menu-link {
+	color: #6CD4FF;
+}
+
+.affiliate-menu-link::before {
+	font-family: 'Font Awesome 5 Free';
+	content: ' \f2b5  ';
+	color: green;
 }
