@@ -78,4 +78,10 @@ v.0.8
 -Checked off all head tasks
 -Checked off all image tasks  
 -Checked off all webfont tasks 
+-Checked off all performance tasks
+
+v.0.9
+-Added missing aria labels for accessibility 
+-Completed Google site verification
 -
+

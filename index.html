@@ -45,7 +45,7 @@
 
   <nav>
     <div class="menu-wrap">
-      <input type="checkbox" class="toggler">
+      <input aria-label="Menu" type="checkbox" class="toggler">
       <div class="hamburger"><div></div></div>
       <div class="menu">
         <div>
@@ -61,7 +61,7 @@
     </div>
   </nav>
 
-<p class="version"><a href="https://github.com/phoenix-pix/Personal-Portfolio/blob/main/README.md">v.0.8</a></p>
+<p class="version"><a href="https://github.com/phoenix-pix/Personal-Portfolio/blob/main/README.md">v.0.9</a></p>
 
 <main>
   <section class="intro">
@@ -132,16 +132,16 @@
 
 <div class="contact-wrap">
 
-<button class="contact-redirect">Send me a message!</button>
+<button aria-label="Send message" class="contact-redirect">Send me a message!</button>
 
   <div class="modal-bg">
     <div class="modal">
       <h3>Please fill in your details below:</h3>
       <p style="font-size: 16px;">I will get back to you within 24 hours!</p>
       <form name="contactForm" action="index.php" method="post">
-      <input type="text" name="name" required placeholder="John Doe">
-      <input type="text" name="mail" required placeholder="johndoe@email.com" minlength="5" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" title="Please ensure you've entered your details in correctly and try again. Please note that we only accept emails from TLDs, e.g. '.com or .uk'">
-      <textarea name="message" aria-label="Message" maxlength="500" required placeholder="Give me a brief overview of what you're aiming to achieve"></textarea>
+      <input aria-label="Name" type="text" name="name" required placeholder="John Doe">
+      <input aria-label="Email" type="text" name="mail" required placeholder="johndoe@email.com" minlength="5" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" title="Please ensure you've entered your details in correctly and try again. Please note that we only accept emails from TLDs, e.g. '.com or .uk'">
+      <textarea aria-label="Message" name="message" aria-label="Message" maxlength="500" required placeholder="Give me a brief overview of what you're aiming to achieve"></textarea>
 
       <div class="g-recaptcha" data-sitekey="6Lf0seoZAAAAADf8i2r6ajDrda0f_boQKryfe9Co"></div>
       <div class="status">
@@ -166,7 +166,7 @@ $response = json_decode($response);
 if ($response->success)
   {
     mail($recipient, $formcontent, $mailheader);
-    echo "Message sent successfully!";
+    echo "Thank you for verifying your identity!";
   }
   else
   {
@@ -175,7 +175,7 @@ if ($response->success)
 }
 ?>
       </div>
-      <button type="submit" aria-label="Submit" name="submit" value="submit" class="contact-redirect">Send!</button>
+      <button aria-label="Submit message" type="submit" aria-label="Submit" name="submit" value="submit" class="contact-redirect">Send!</button>
       </form>
 
 
