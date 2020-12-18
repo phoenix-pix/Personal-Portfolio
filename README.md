@@ -83,5 +83,9 @@ v.0.8
 v.0.9
 -Added missing aria labels for accessibility 
 -Completed Google site verification
+-Added description of steps after sending me a message 
+-Activated Cloudflare
+-Removed silver/bronze glow animations 
+-Added skill bar for SASS
 -
 

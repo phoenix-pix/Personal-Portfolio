@@ -793,7 +793,7 @@ background: #FBFEF9;
 	display: flex;
 	flex-direction: column;
 	align-items: center; /* Change back to center */
-	height: 20vh;
+	height: auto;
 }
 
 button {
@@ -1079,6 +1079,22 @@ form {
   color: red;
 }
 
+/* Style for process list */
+.process-h {
+	color: #86E79D;
+	font-family: Montserrat, sans-serif;
+	margin-top: 20px;
+}
+
+.process {
+	list-style-type: type;
+	font-family: Montserrat, sans-serif;
+}
+
+.process li {
+	padding: 40px inherit;
+}
+
 /* WIP Indicator */
 .wip::before {
 	content: "--WORK-IN-PROGRESS--";
@@ -1136,7 +1152,7 @@ a[data-tool-tip]::after {
 
 .skills {
 	 text-align: right;
-   color: #fff;
+     color: #fff;
 	 padding: 10px;
 	 border: solid #fff 2px;
 }
@@ -1150,6 +1166,10 @@ a[data-tool-tip]::after {
 	width: 80%;
 	background-color: #2196F3;
 }
+.sass {
+	width: 75%;
+	background-color: #CF649A;
+}
 
 .js {
 	width: 55%;
@@ -1157,7 +1177,7 @@ a[data-tool-tip]::after {
 }
 
 .php {
-	width: 55%;
+	width: 50%;
 	background-color: #808080;
 }
 
@@ -1231,40 +1251,16 @@ a[data-tool-tip]::after {
 
 /*Glowing Animation */
 
-/* Gold Rank */
+/* Gold Glow */
 @keyframes glowing-g {
-  0% { box-shadow: 0 0 -10px #c4a300; }
-  40% { box-shadow: 0 0 20px #c4a300; }
-  60% { box-shadow: 0 0 20px #c4a300; }
-  100% { box-shadow: 0 0 -10px #c4a300; }
+  0% { box-shadow: 0 0 -5px #c4a300; }
+  40% { box-shadow: 0 0 10px #c4a300; }
+  60% { box-shadow: 0 0 10px #c4a300; }
+  100% { box-shadow: 0 0 -5px #c4a300; }
 }
 
 .glow-g {
-  animation: glowing-g 4000ms infinite;
-}
-
-/* Silver Rank */
-@keyframes glowing-s {
-  0% { box-shadow: 0 0 -5px #C0C0C0; }
-  40% { box-shadow: 0 0 10px #C0C0C0; }
-  60% { box-shadow: 0 0 10px #C0C0C0; }
-  100% { box-shadow: 0 0 -5px #C0C0C0; }
-}
-
-.glow-s {
-  animation: glowing-s 4000ms infinite;
-	animation-delay: 2s;
-}
-/* Bronze Rank */
-@keyframes glowing-b {
-  0% { box-shadow: 0 0 -5px #cd7f32; }
-  40% { box-shadow: 0 0 10px #cd7f32; }
-  60% { box-shadow: 0 0 10px #cd7f32; }
-  100% { box-shadow: 0 0 -5px #cd7f32; }
-}
-
-.glow-b {
-  animation: glowing-b 4000ms infinite;
+  animation: glowing-g 5000ms infinite;
 }
 
 /* Project timestamps */

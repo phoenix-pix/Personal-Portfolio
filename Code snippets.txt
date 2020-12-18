@@ -1,3 +1,58 @@
+Modal Form 
+
+<button aria-label="Send message" class="contact-redirect">Send me a message!</button>
+
+  <div class="modal-bg">
+    <div class="modal">
+      <h3>Please fill in your details below:</h3>
+      <p style="font-size: 16px;">I will get back to you within 24 hours!</p>
+      <form name="contactForm" action="index.php" method="post">
+      <input aria-label="Name" type="text" name="name" required placeholder="John Doe">
+      <input aria-label="Email" type="text" name="mail" required placeholder="johndoe@email.com" minlength="5" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" title="Please ensure you've entered your details in correctly and try again. Please note that we only accept emails from TLDs, e.g. '.com or .uk'">
+      <textarea aria-label="Message" name="message" aria-label="Message" maxlength="500" required placeholder="Give me a brief overview of what you're aiming to achieve"></textarea>
+
+      <div class="g-recaptcha" data-sitekey="6Lf0seoZAAAAADf8i2r6ajDrda0f_boQKryfe9Co"></div>
+      <div class="status">
+        <?php
+if(isset($_POST['submit']))
+{
+$name = $_POST['name'];
+$mail = $_POST['mail'];
+$message = $_POST['message'];
+$formcontent=" From: $name";
+$recipient = "hello@lovellsantimano.com";
+$mailheader = "From: $mail \n\n Message: \n\n $message";
+
+$secretKey = "6Lf0seoZAAAAAO7L-0qIn8ZGc7lGnZddh66Dq3bx";
+$responseKey = $_POST['g-recaptcha-response'];
+$UserIP = $_SERVER['REMOTE_ADDR'];
+$url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$UserIP";
+
+$response = file_get_contents($url);
+$response = json_decode($response);
+
+if ($response->success)
+  {
+    mail($recipient, $formcontent, $mailheader);
+    echo "Thank you for verifying your identity!";
+  }
+  else
+  {
+    echo "<span>Please verify that you're not a robot.</span>";
+  }
+}
+?>
+      </div>
+      <button aria-label="Submit message" type="submit" aria-label="Submit" name="submit" value="submit" class="contact-redirect">Send!</button>
+      </form>
+
+
+      <span class="modal-close">X</span>
+  </div>
+</div>
+
+
+
 PHP New Code w/ Google captcha (Now works)
 
 <?php
