@@ -87,5 +87,10 @@ v.0.9
 -Activated Cloudflare
 -Removed silver/bronze glow animations 
 -Added skill bar for SASS
+-Added error pages (404 and 500)
+-Checked off all html tasks 
+
+v.1.0
 -
+
 
