@@ -445,6 +445,11 @@ section {
     }
 }
 
+// Testimonial Formatting 
+.recent {
+    color: var(--color-secondary);
+}
+
 // Portfolio Page 
 .portfolios {
     display: grid;
@@ -499,4 +504,64 @@ section {
 .portfolio-item:hover .port-hover {
     opacity: 1;
     transform: scale(1);
+}
+
+// Contact Page 
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+
+    .contact-title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 500;
+
+        span {
+            color: var(--color-secondary);
+            text-transform: var(--box-shadow1);
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        margin-top: 20px;
+
+        input {
+            padding: 13px;
+            margin: 20px;
+            border: solid 2px var(--color-white);
+            border-radius: 2em;
+            width: 50vw;
+            font-family: inherit;
+        }
+
+        textarea {
+            padding: 15px;
+            margin: 20px;
+            border-radius: 2em;
+            resize: none;
+            overflow-y: auto;
+            width: 50vw;
+            font-family: inherit;
+        }
+
+        button {
+            padding: 20px;
+            border-radius: 2em;
+            cursor: pointer;
+            width: 10vw;
+            background-color: var(--color-white);
+            font-family: inherit;
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
 }
