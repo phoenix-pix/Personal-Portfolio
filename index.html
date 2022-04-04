@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -46,8 +46,7 @@
                     skills from scratch and now find myself on the ever-cyclical road of self-improvement and life-long
                     learning…</p>
                 <div class="hero-btn-con">
-                    <a href="" aria-label="CV download" class="hero-btn">
-                        <!-- Button to download CV -->
+                    <a href="" aria-label="CV download" class="hero-btn" download="#">
                         <span class="hero-btn-text">Download CV</span>
                         <span class="hero-btn-icon">
                             <i class="fa-solid fa-download"></i>
@@ -71,12 +70,17 @@
                         Asperiores distinctio natus, laudantium similique aliquid a rerum in nisi officia sapiente
                         soluta ipsa provident consequatur repellendus enim accusamus totam cupiditate iusto molestiae!
                         Perspiciatis.</p>
-                    <p>Recent Testimonial: My experience in working together with Lovell on the
-                        development of the YOU
-                        CAN COOK website has been nothing but a pleasure. He has been organised, consistent and timely
-                        with deadlines and I have been impressed by his communication and delivery throughout. I would
-                        not hesitate in recommending him as a web designer or coder as he has the rarer ability to
-                        manage both sides of any web development project - often the work of a whole team.</p>
+                    <p id="recent">Emily Maciness:<br> <span class="quotes">My experience in working together with
+                            Lovell on
+                            the
+                            development of the YOU
+                            CAN COOK website has been nothing but a pleasure. He has been organised, consistent and
+                            timely
+                            with deadlines and I have been impressed by his communication and delivery throughout. I
+                            would
+                            not hesitate in recommending him as a web designer or coder as he has the rarer ability to
+                            manage both sides of any web development project - often the work of a whole team.</span>
+                    </p>
                 </div>
                 <div class="r-about-con">
                     <div class="about-item">
@@ -162,10 +166,10 @@
                         <h3>YOU CAN COOK</h3>
                         <div class="icons">
                             <a href="https://github.com/phoenix-pix/YOU-CAN-COOK-Redesign" target="_blank"
-                                aria-label="Github Source Code">
+                                rel="noopener no-referrer" aria-label="Github Source Code">
                                 <i class="fa-brands fa-github"></i>
                             </a>
-                            <a href="https://www.youcancook.org.uk/" target="_blank"
+                            <a href="https://www.youcancook.org.uk/" target="_blank" rel="noopener no-referrer"
                                 aria-label="You Can Cook Home Page">
                                 <i class="fa-solid fa-desktop"></i>
                             </a>
@@ -178,10 +182,10 @@
                         <h3>Personal Portfolio</h3>
                         <div class="icons">
                             <a href="https://github.com/phoenix-pix/Personal-Portfolio" target="_blank"
-                                aria-label="Github Source Code">
+                                rel="noopener no-referrer" aria-label="Github Source Code">
                                 <i class="fa-brands fa-github"></i>
                             </a>
-                            <a href="https://www.lovellsantimano.com/" target="_blank"
+                            <a href="https://www.lovellsantimano.com/" target="_blank" rel="noopener no-referrer"
                                 aria-label="Lovell Santimano's Personal-Portfolio Home Page">
                                 <i class="fa-solid fa-desktop"></i>
                             </a>
@@ -192,25 +196,41 @@
         </section>
 
         <section class="section section4 contact" id="contact">
+            <h2 class="contact-title"><span>Contact</span> Me</h2>
             <div class="contact-container">
-                <h2 class="contact-title"><span>Contact</span> Me</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ipsum veniam placeat libero quasi
-                    expedita culpa tempore fugiat ex qui voluptatem excepturi velit nulla earum, obcaecati vitae
-                    officiis
-                    omnis fuga porro esse dolorem. Ullam ut aspernatur enim illum molestiae ipsam atque fuga velit nemo
-                    animi aliquam mollitia, sequi quia dolore!</p>
+                <div class="contact-left">
+                    <h4>If you'd like to get in touch, my social links are available below. Alternatively, you can reach
+                        out via the contact form on this page ></h4>
+                    <p>Sounds great! &#128515</p>
+                    <div class="socials">
+                        <a class="social-item" href="#" target="_blank" rel="noopener no-referrer"
+                            aria-label="Lovell Santimano's LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a class="social-item" href="#" target="_blank" rel="noopener no-referrer"
+                            aria-label="Lovell Santimano's Github Profile Page">
+                            <i class="fa-brands fa-github-alt"></i>
+                        </a>
+                        <a class="social-item" href="#" target="_blank" rel="noopener no-referrer"
+                            aria-label="Lovell Santimano's Dev.to Profile Page">
+                            <i class="fa-brands fa-dev"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="contactForm" action="index.php#contact" method="post">
+                        <input aria-label="Name" type="text" name="name" required placeholder="Your Name">
+                        <input aria-label="Email" type="text" name="mail" required placeholder="Your Email"
+                            minlength="5"
+                            pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
+                            title="Please ensure you've entered your details in correctly and try again. Please note that we only accept emails from TLDs, e.g. '.com or .uk'">
+                        <textarea aria-label="Message" name="message" aria-label="Message" maxlength="500" required
+                            placeholder="Your Message"></textarea>
+                        <button aria-label="Submit message" type="submit" aria-label="Submit" name="submit"
+                            value="submit" class="contact-redirect">Send!</button>
+                    </form>
+                </div>
 
-                <form name="contactForm" action="index.php#contact" method="post">
-                    <input aria-label="Name" type="text" name="name" required placeholder="John Doe">
-                    <input aria-label="Email" type="text" name="mail" required placeholder="johndoe@email.com"
-                        minlength="5"
-                        pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
-                        title="Please ensure you've entered your details in correctly and try again. Please note that we only accept emails from TLDs, e.g. '.com or .uk'">
-                    <textarea aria-label="Message" name="message" aria-label="Message" maxlength="500" required
-                        placeholder="Your Message"></textarea>
-                    <button aria-label="Submit message" type="submit" aria-label="Submit" name="submit" value="submit"
-                        class="contact-redirect">Send!</button>
-                </form>
             </div>
         </section>
     </main>
@@ -227,6 +247,9 @@
         <div class="control control-4" data-id="contact">
             <i class="fa-solid fa-envelope-open-text"></i>
         </div>
+    </div>
+    <div class="dark-mode-toggle">
+        <i class="fa-solid fa-moon"></i>
     </div>
     <script src="app.js"></script>
 </body>
