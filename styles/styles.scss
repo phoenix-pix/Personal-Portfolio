@@ -846,7 +846,7 @@ form {
             margin: 0;
 
             h4::after {
-                top: -10%;
+                top: -5%;
             }
         }
 
@@ -855,16 +855,16 @@ form {
 
             input {
                 margin: 20px 0;
-                width: auto;
+                width: 100%;
             }
 
             textarea {
                 margin: 20px 0;
-                width: auto;
+                width: 100%;
             }
 
             button {
-                width: auto;
+                width: 100%;
             }
         }
     }
@@ -881,42 +881,163 @@ form {
     padding: .5rem;
 }
 
-// Tablet Queries
+// Tablet Queries // Home 
 @media only screen and (min-width: 481px) and (max-width: 1100px) {
-    .left-header {
+    .header-content {
+        grid-template-columns: 1fr;
+        padding: .5rem 2rem;
+
+        .left-header {
+            .left-header-shape {
+                position: relative;
+                margin: 0;
+                padding: 0;
+
+                .hero-image {
+                    width: 80%;
+                    height: 80%;
+                    z-index: 2;
+                    margin: 1.5rem .5rem 0 -1rem;
+                }
+            }
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+
+        .hero-btn {
+            font-size: 1rem;
+            margin-bottom: 6rem;
+        }
+    }
+
+    .controls {
+        top: auto;
+        bottom: 0;
+        flex-direction: row;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
         width: 100%;
+        background-color: var(--color-grey-1);
 
-        .left-header-shape {
-            width: 70%;
+        .control {
+            margin: 1rem .3rem;
+        }
+    }
 
-            .hero-image {
-                width: 80%;
-                margin: 2rem 1rem 0 1rem;
+    // 'About Me' TABLET
+    .about-title {
+        margin-bottom: 2rem;
+        padding: 0;
+
+        h2 {
+            font-size: 2rem;
+
+            .stats-title {
+                font-size: 1.5rem;
             }
         }
     }
 
-    .right-header {
-        padding-top: 15%;
-        width: 75%;
+    .about-container {
+        grid-template-columns: 1fr;
+        padding: 0;
+        width: 100%;
 
-        .hero-text {
-            font-size: 1.1rem;
+        .l-about-con {
+            width: 90%;
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                padding: 0;
+                margin-bottom: 10px;
+                width: 100%;
+            }
         }
 
-        p {
-            font-size: .9rem;
-            margin: 1.5rem 0;
+        .r-about-con {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+    .about-stats {
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        .skill-grid {
+            grid-template-columns: repeat(2, 1fr);
+            margin-bottom: 3rem;
+
+            .skill-item {
+                flex-direction: column;
+            }
         }
     }
 
-    .hero-btn {
-        font-size: 1rem;
+    // 'Portfolio' TABLET 
+    .portfolios {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    // 'Contact' TABLET 
+    .contact-container {
+        max-width: 100vw;
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin-top: 0;
+
+        .contact-left {
+            order: 2;
+            padding: 60% 0;
+            margin: 0;
+            max-width: 50;
+            max-height: 50%;
+
+            h4::after {
+                top: -20%;
+            }
+        }
+
+        form {
+            order: 1;
+
+            input {
+                margin: 20px 0;
+                max-width: 90%;
+                min-width: 70%;
+            }
+
+            textarea {
+                margin: 20px 0;
+                max-width: 90%;
+                min-width: 70%;
+            }
+
+            button {
+                max-width: 55%;
+                min-width: 50%;
+            }
+        }
     }
 }
 
 
-
+// Desktop Queries and up 
 @media only screen and (min-width: 1100px) {
     .left-header {
         width: 70%;
