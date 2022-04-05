@@ -87,6 +87,39 @@ header {
     }
 }
 
+// Status message styling for Contact Form 
+//Failure States
+.errMsg {
+    width: 350px;
+    padding: 10px;
+    color: #ffff;
+    z-index: 101;
+    margin: auto;
+    text-align: center;
+    background: rgba(198, 0, 0, 0.59);
+    border-radius: 1em;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.2px);
+    -webkit-backdrop-filter: blur(10.2px);
+    border: 1px solid rgba(198, 0, 0, 1);
+}
+
+//Success State 
+.succMsg {
+    width: 350px;
+    padding: 10px;
+    color: #ffff;
+    z-index: 101;
+    margin: auto;
+    text-align: center;
+    background: rgba(55, 161, 198, 0.71);
+    border-radius: 1em;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.2px);
+    -webkit-backdrop-filter: blur(10.2px);
+    border: 1px solid rgba(55, 161, 198, 1);
+}
+
 
 section {
     height: auto;
@@ -1065,7 +1098,7 @@ form {
             width: 100%;
 
             .hero-image {
-                width: 70%;
+                max-width: 80%;
                 margin: 3rem 0rem 0 3rem;
             }
         }

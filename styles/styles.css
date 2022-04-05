@@ -86,6 +86,38 @@ header {
   color: #000;
 }
 
+.errMsg {
+  width: 350px;
+  padding: 10px;
+  color: #ffff;
+  z-index: 101;
+  margin: auto;
+  text-align: center;
+  background: rgba(198, 0, 0, 0.59);
+  border-radius: 1em;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  border: 1px solid #c60000;
+}
+
+.succMsg {
+  width: 350px;
+  padding: 10px;
+  color: #ffff;
+  z-index: 101;
+  margin: auto;
+  text-align: center;
+  background: rgba(55, 161, 198, 0.71);
+  border-radius: 1em;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  border: 1px solid #37a1c6;
+}
+
 section {
   height: auto;
   position: absolute;
@@ -1163,7 +1195,7 @@ form button:hover {
     width: 100%;
   }
   .left-header .left-header-shape .hero-image {
-    width: 70%;
+    max-width: 80%;
     margin: 3rem 0rem 0 3rem;
   }
   .right-header {
