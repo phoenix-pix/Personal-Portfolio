@@ -21,6 +21,7 @@
   --color-grey-6: #12181b;
   --color-inactive-button: #fff;
   --color-active-button: #6290C3;
+  --color-dark-mode-toggle: #ffff;
   --br-sm-2: 14px;
   --section-transition: all 0.3s ease-in-out;
   --box-shadow1: 0 3px 15px rgba(0, 0, 0, .3);
@@ -64,6 +65,25 @@ header {
   --color-grey-6: #12181b;
   --color-inactive-button: #b2becd;
   --color-active-button: #D58936;
+  --color-dark-mode-toggle: rgba(0, 0, 0, 0.521);
+}
+
+.enablejs {
+  width: 100vw;
+  height: auto;
+  background-color: yellow;
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 100;
+  font-size: 16px;
+}
+
+.enablejs a {
+  text-decoration: underline;
+  color: #000;
 }
 
 section {
@@ -206,7 +226,7 @@ section {
   top: 5%;
   right: 3%;
   border-radius: 50%;
-  background-color: var(--color-grey-3);
+  background-color: var(--color-dark-mode-toggle);
   position: fixed;
   cursor: pointer;
   display: -webkit-box;

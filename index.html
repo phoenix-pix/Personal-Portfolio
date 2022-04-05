@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en-gb" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lovell Santimano">
+    <meta name="description"
+        content="Welcome to my Portfolio! My name is Lovell Santimano & I am a web developer based out of Scotland. This site will be the home of all my creative endeavours, programming or otherwise.">
     <title>Lovell Santimano | Portfolio</title>
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
@@ -22,7 +24,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
+
+<noscript>
+    <style>
+        .dark-mode-toggle {
+            display: none;
+        }
+    </style>
+    <div class="enablejs">
+        <p>For full functionality of this site it is necessary to enable JavaScript.
+            Here are the <a href="https://www.enable-javascript.com/">
+                instructions how to enable JavaScript in your web browser</a>.</p>
+    </div>
+</noscript>
+
+<?php
+if(isset($_POST['submit'])):
+    if(isset($_POST['h-captcha-response']) && !empty($_POST['h-captcha-response'])):
+        // get verify response
+        $data = array(
+              'secret' => "0xEe6d13116E693077911BdfF07621E7b1C1dbE64E",
+              'response' => $_POST['h-captcha-response']
+          );
+        $verify = curl_init();
+        curl_setopt($verify, CURLOPT_URL,   "https://hcaptcha.com/siteverify");
+        curl_setopt($verify, CURLOPT_POST, true);
+        curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+        $verifyResponse = curl_exec($verify);        $responseData = json_decode($verifyResponse);    $name = !empty($_POST['name'])?$_POST['name']:'';
+    $email = !empty($_POST['email'])?$_POST['email']:'';
+    $message = !empty($_POST['message'])?$_POST['message']:'';
+        if($responseData->success):
+      //contact form submission code
+      $to = 'hello@lovellsantimano.com';
+      $subject = 'New contact form has been submitted';
+      $htmlContent = "
+        <h1>Contact request details</h1>
+        <p><b>Name: </b>".$name."</p>
+        <p><b>Email: </b>".$email."</p>
+        <p><b>Message: </b>".$message."</p>
+      ";
+      // Always set content-type when sending HTML email
+      $headers = "MIME-Version: 1.0" . "\r\n";
+      $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+      // More headers
+      $headers .= 'From:'.$name.' <'.$email.'>' . "\r\n";
+      //send email
+      @mail($to,$subject,$htmlContent,$headers);
+      
+            $succMsg = 'Your contact request has been submitted successfully.';
+      $name = '';
+      $email = '';
+      $message = '';
+        else:
+            $errMsg = 'hCaptcha verification failed. Please try again.';
+        endif;
+    else:
+        $errMsg = 'Please click on the hCaptcha button.';
+    endif;
+else:
+    $errMsg = '';
+    $succMsg = '';
+  $name = '';
+  $email = '';
+  $message = '';
+endif;
+?>
 
 <body class="main-content">
     <header class="section section1 header active" id="home">
@@ -163,11 +232,11 @@
             </div>
             <div class="portfolios">
                 <div class="portfolio-item">
-                    <img src="images/port1.webp" alt="You Can Cook Home Page">
+                    <img src="images/port1.webp" alt="You Can Cook Home Page" loading="lazy">
                     <div class="port-hover">
                         <h3>YOU CAN COOK</h3>
                         <div class="icons">
-                            <a href="https://github.com/phoenix-pix/YOU-CAN-COOK-Redesign" target="_blank"
+                            <a href="https://github.com/phoenix-pix/YOU-CAN-COOK-New-Website" target="_blank"
                                 rel="noopener no-referrer" aria-label="Github Source Code">
                                 <i class="fa-brands fa-github"></i>
                             </a>
@@ -179,7 +248,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/port2.webp" alt="Personal Portfolio Home Page">
+                    <img src="images/port2.webp" alt="Personal Portfolio Home Page" loading="lazy">
                     <div class="port-hover">
                         <h3>Personal Portfolio</h3>
                         <div class="icons">
@@ -205,29 +274,40 @@
                         out via the contact form on this page ></h4>
                     <p>Sounds great! &#128515</p>
                     <div class="socials">
-                        <a class="social-item" href="#" target="_blank" rel="noopener no-referrer"
-                            aria-label="Lovell Santimano's LinkedIn Profile">
+                        <a class="social-item" href="https://www.linkedin.com/in/lovell-santimano-b3aba81b9/"
+                            target="_blank" rel="noopener no-referrer" aria-label="Lovell Santimano's LinkedIn Profile">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                        <a class="social-item" href="#" target="_blank" rel="noopener no-referrer"
-                            aria-label="Lovell Santimano's Github Profile Page">
+                        <a class="social-item" href="https://github.com/phoenix-pix" target="_blank"
+                            rel="noopener no-referrer" aria-label="Lovell Santimano's Github Profile Page">
                             <i class="fa-brands fa-github-alt"></i>
                         </a>
-                        <a class="social-item" href="#" target="_blank" rel="noopener no-referrer"
-                            aria-label="Lovell Santimano's Dev.to Profile Page">
+                        <a class="social-item" href="https://dev.to/phoenixpix" target="_blank"
+                            rel="noopener no-referrer" aria-label="Lovell Santimano's Dev.to Profile Page">
                             <i class="fa-brands fa-dev"></i>
                         </a>
                     </div>
                 </div>
                 <div class="contact-right">
-                    <form name="contactForm" action="index.php#contact" method="post">
-                        <input aria-label="Name" type="text" name="name" required placeholder="Your Name">
-                        <input aria-label="Email" type="text" name="mail" required placeholder="Your Email"
-                            minlength="5"
+                    <?php if(!empty($errMsg)): ?>
+                    <div class="errMsg">
+                        <?php echo $errMsg; ?>
+                    </div>
+                    <?php endif; ?>
+                    <?php if(!empty($succMsg)): ?>
+                    <div class="succMsg">
+                        <?php echo $succMsg; ?>
+                    </div>
+                    <?php endif; ?>
+                    <form name="contactForm" action="index.php#contact" method="POST">
+                        <input aria-label="Name" type="text" value="<?php echo !empty($name)?$name:''; ?>" name="name"
+                            required placeholder="Your Name">
+                        <input aria-label="Email" type="text" value="<?php echo !empty($email)?$email:''; ?>"
+                            name="email" required placeholder="Your Email" minlength="5"
                             pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
-                            title="Please ensure you've entered your details in correctly and try again. Please note that we only accept emails from TLDs, e.g. '.com or .uk'">
-                        <textarea aria-label="Message" name="message" aria-label="Message" maxlength="500" required
-                            placeholder="Your Message"></textarea>
+                            title="Please ensure you've entered your details in correctly and try again. Please note that I only accept emails from TLDs, e.g. '.com or .uk'">
+                        <textarea aria-label="Message" type="text" name="message" aria-label="Message" maxlength="500"
+                            required placeholder="Your Message"><?php echo !empty($message)?$message:''; ?></textarea>
                         <div class="h-captcha" data-sitekey="dcdbd603-138e-4ae4-a8f8-cda63cda7f57" data-theme="dark"
                             data-size="normal">
 
