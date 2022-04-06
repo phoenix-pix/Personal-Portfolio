@@ -22,6 +22,7 @@
   --color-inactive-button: #fff;
   --color-active-button: #6290C3;
   --color-dark-mode-toggle: #ffff;
+  --color-form: #ffff;
   --br-sm-2: 14px;
   --section-transition: all 0.3s ease-in-out;
   --box-shadow1: 0 3px 15px rgba(0, 0, 0, .3);
@@ -66,6 +67,7 @@ header {
   --color-inactive-button: #b2becd;
   --color-active-button: #D58936;
   --color-dark-mode-toggle: rgba(0, 0, 0, 0.521);
+  --color-form: #ccc;
 }
 
 .enablejs {
@@ -87,9 +89,10 @@ header {
 }
 
 .errMsg {
-  width: 350px;
+  width: 300px;
   padding: 10px;
   color: #ffff;
+  font-size: 14px;
   z-index: 101;
   margin: auto;
   text-align: center;
@@ -106,6 +109,7 @@ header {
   width: 350px;
   padding: 10px;
   color: #ffff;
+  font-size: 14px;
   z-index: 101;
   margin: auto;
   text-align: center;
@@ -868,23 +872,23 @@ form {
 form input {
   padding: 13px;
   margin: 20px;
-  border: solid 2px var(--color-grey-3);
+  border: solid 2px var(--color-form);
   border-radius: 2em;
   width: 40vw;
   font-family: inherit;
-  background-color: var(--color-grey-3);
+  background-color: var(--color-form);
 }
 
 form textarea {
   padding: 15px;
   margin: 20px;
-  border: solid 2px var(--color-grey-3);
+  border: solid 2px var(--color-form);
   border-radius: 2em;
   resize: none;
   overflow-y: auto;
   width: 40vw;
   font-family: inherit;
-  background-color: var(--color-grey-3);
+  background-color: var(--color-form);
 }
 
 form button {

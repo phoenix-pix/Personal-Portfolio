@@ -44,3 +44,17 @@ function PageTransitions() {
 
 PageTransitions(); 
 
+//Timeouts for Contact Form Status Alerts
+setTimeout(() => {
+    const errMsgTimeOut = document.getElementById('errMsg');
+      //removes element from DOM
+    errMsg.style.display = 'none';
+  }, 10000); // time in milliseconds
+  
+  setTimeout(() => {
+    const succMsgTimeOut = document.getElementById('succMsg');
+      //removes element from DOM
+    succMsg.style.display = 'none';
+  }, 10000); // time in milliseconds
+
+

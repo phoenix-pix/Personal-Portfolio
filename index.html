@@ -74,7 +74,7 @@ if(isset($_POST['submit'])):
       //send email
       @mail($to,$subject,$htmlContent,$headers);
       
-            $succMsg = 'Your contact request has been submitted successfully.';
+            $succMsg = 'Your message has been submitted successfully.';
       $name = '';
       $email = '';
       $message = '';
@@ -94,8 +94,19 @@ endif;
 ?>
 
 <body class="main-content">
+    <?php if(!empty($errMsg)): ?>
+    <div id="errMsg" class="errMsg">
+        <?php echo $errMsg; ?>
+    </div>
+    <?php endif; ?>
+    <?php if(!empty($succMsg)): ?>
+    <div id="succMsg" class="succMsg">
+        <?php echo $succMsg; ?>
+    </div>
+    <?php endif; ?>
     <header class="section section1 header active" id="home">
         <div class="header-content">
+
             <div class="left-header">
                 <div class="left-header-shape">
                     <div class="hero-image">
@@ -291,16 +302,7 @@ endif;
                     </div>
                 </div>
                 <div class="contact-right">
-                    <?php if(!empty($errMsg)): ?>
-                    <div class="errMsg">
-                        <?php echo $errMsg; ?>
-                    </div>
-                    <?php endif; ?>
-                    <?php if(!empty($succMsg)): ?>
-                    <div class="succMsg">
-                        <?php echo $succMsg; ?>
-                    </div>
-                    <?php endif; ?>
+
                     <form name="contactForm" action="index.php#contact" method="POST">
                         <input aria-label="Name" type="text" value="<?php echo !empty($name)?$name:''; ?>" name="name"
                             required placeholder="Your Name">
