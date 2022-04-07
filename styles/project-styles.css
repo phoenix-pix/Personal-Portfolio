@@ -30,8 +30,6 @@ body {
   margin: 50px auto;
   position: relative;
   padding: 2rem;
-  -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #EFEFEF, inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .clock-face {
@@ -54,5 +52,17 @@ body {
           transform: rotate(90deg);
   -webkit-transition: all 0.4s cubic-bezier(0.79, 0.14, 0.15, 0.86);
   transition: all 0.4s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+}
+
+.second-hand {
+  background: red;
+}
+
+.min-hand {
+  height: 4.5px;
+}
+
+.hour-hand {
+  height: 6px;
 }
 /*# sourceMappingURL=project-styles.css.map */
