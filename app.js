@@ -53,8 +53,7 @@ setTimeout(() => {
   
   setTimeout(() => {
     const succMsgTimeOut = document.getElementById('succMsg');
-      //removes element from DOM
-    succMsg.style.display = 'none';
-  }, 10000); // time in milliseconds
 
+    succMsg.style.display = 'none';
+  }, 10000); 
 
