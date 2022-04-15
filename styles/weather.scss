@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    background-color: black; // change to dynamic images after completion 
+}
+
+.card {
+    background: rgb(255, 255, 255);
+    opacity: 0.8;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 550px;
+    margin: 1em;
+
+    .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        margin: 0.5em;
+        border-radius: 50%;
+        border: solid 1px black;
+        height: 2.5em;
+        width: 2.5em;
+        outline: none;
+        // background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            background-color: rgb(143, 136, 136);
+            cursor: pointer;
+        }
+    }
+}
+
+input {
+    border: solid 1px black;
+    outline: none;
+    padding: .5em;
+    border-radius: 2em;
+    // background-color: rgb(255, 255, 255);
+    font-family: inherit;
+    width: 50%;
+}
+
+.temp {
+    margin: 0;
+}
