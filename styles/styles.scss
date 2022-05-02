@@ -536,10 +536,6 @@ section {
 
             p.large-text {
                 color: var(--color-secondary);
-
-                &::after {
-                    content: ':';
-                }
             }
         }
     }

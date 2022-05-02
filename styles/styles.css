@@ -634,10 +634,6 @@ section {
   color: var(--color-secondary);
 }
 
-.about-stats .skill-grid .skill-item p.large-text::after {
-  content: ':';
-}
-
 #recent {
   color: var(--color-secondary);
   border: solid 2px var(--color-white);
